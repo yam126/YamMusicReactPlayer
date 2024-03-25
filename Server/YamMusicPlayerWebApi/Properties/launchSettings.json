@@ -1,0 +1,41 @@
+{
+  "profiles": {
+    "YamMusicPlayerWebApi": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "dotnetRunMessages": true,
+      //"applicationUrl": "https://localhost:7056;http://localhost:5242",
+      //"applicationUrl": "https://192.168.3.82:7056;http://192.168.3.82:5242",
+      "applicationUrl": "http://192.168.3.82:5242"
+    },
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "Docker": {
+      "commandName": "Docker",
+      "launchBrowser": true,
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/swagger",
+      "publishAllPorts": true,
+      "useSSL": true
+    }
+  },
+  "$schema": "https://json.schemastore.org/launchsettings.json",
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      //"applicationUrl": "http://localhost:13572",
+      "applicationUrl": "http://192.168.3.82:13572",
+      "sslPort": 44341
+    }
+  }
+}

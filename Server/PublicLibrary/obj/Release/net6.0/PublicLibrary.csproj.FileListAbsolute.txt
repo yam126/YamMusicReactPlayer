@@ -1,0 +1,12 @@
+D:\YamMusicPlayerWebApi\PublicLibrary\bin\Release\net6.0\PublicLibrary.deps.json
+D:\YamMusicPlayerWebApi\PublicLibrary\bin\Release\net6.0\PublicLibrary.dll
+D:\YamMusicPlayerWebApi\PublicLibrary\bin\Release\net6.0\PublicLibrary.pdb
+D:\YamMusicPlayerWebApi\PublicLibrary\obj\Release\net6.0\PublicLibrary.csproj.AssemblyReference.cache
+D:\YamMusicPlayerWebApi\PublicLibrary\obj\Release\net6.0\PublicLibrary.GeneratedMSBuildEditorConfig.editorconfig
+D:\YamMusicPlayerWebApi\PublicLibrary\obj\Release\net6.0\PublicLibrary.AssemblyInfoInputs.cache
+D:\YamMusicPlayerWebApi\PublicLibrary\obj\Release\net6.0\PublicLibrary.AssemblyInfo.cs
+D:\YamMusicPlayerWebApi\PublicLibrary\obj\Release\net6.0\PublicLibrary.csproj.CoreCompileInputs.cache
+D:\YamMusicPlayerWebApi\PublicLibrary\obj\Release\net6.0\PublicLibrary.dll
+D:\YamMusicPlayerWebApi\PublicLibrary\obj\Release\net6.0\refint\PublicLibrary.dll
+D:\YamMusicPlayerWebApi\PublicLibrary\obj\Release\net6.0\PublicLibrary.pdb
+D:\YamMusicPlayerWebApi\PublicLibrary\obj\Release\net6.0\ref\PublicLibrary.dll

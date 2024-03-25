@@ -1,0 +1,19 @@
+{
+  "Version": 1,
+  "Hash": "MQeLW95TNm0jlj/0QuNA7bLJ6XxS7AVS0gex8KA9zsc=",
+  "Source": "YamMusicPlayerWebApi",
+  "BasePath": "_content/YamMusicPlayerWebApi",
+  "Mode": "Default",
+  "ManifestType": "Publish",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "YamMusicPlayerWebApi\\wwwroot",
+      "Source": "YamMusicPlayerWebApi",
+      "ContentRoot": "D:\\YamMusicPlayerWebApi\\YamMusicPlayerWebApi\\wwwroot\\",
+      "BasePath": "_content/YamMusicPlayerWebApi",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": []
+}
