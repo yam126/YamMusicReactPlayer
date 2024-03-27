@@ -172,6 +172,7 @@ namespace YamMusicPlayerWebApi.Controllers
         {
             string cover = string.Empty;
             string AlbumCover = string.Empty;
+            string userFace = string.Empty;
             string host = PublicFunction.GetRequestHost(Request);
             if (!string.IsNullOrEmpty(args.Cover))
             {
@@ -182,6 +183,10 @@ namespace YamMusicPlayerWebApi.Controllers
             {
                 AlbumCover = PublicFunction.ConvertCover(args.AlbumCover);
                 AlbumCover = $"{host}/{AlbumCover}";
+            }
+            if (!string.IsNullOrEmpty(args.Userface)) 
+            {
+                userFace = $"/{host}/{args.Userface}";
             }
             var result=new vwRecentlyListened() 
             {
@@ -197,7 +202,7 @@ namespace YamMusicPlayerWebApi.Controllers
                 Duration=args.Duration.ToString(),
                 RecordID=args.RecordID.ToString(),
                 FileName=args.FileName,
-                Userface=args.Userface,
+                Userface= userFace,
                 FileSize=args.FileSize,
                 FileType=args.FileType,
                 ShareCount=args.ShareCount.ToString(),

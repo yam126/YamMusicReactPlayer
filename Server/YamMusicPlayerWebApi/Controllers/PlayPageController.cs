@@ -321,7 +321,7 @@ namespace YamMusicPlayerWebApi.Controllers
             resultData.albumSongList = new List<songinfoResult>();
             foreach (var item in albumSongList)
                 resultData.albumSongList.Add(PublicFunction.ConvertApiResult(item, Request));
-            resultData.creater = PublicFunction.ConvertApi(creater);
+            resultData.creater = PublicFunction.ConvertApi(creater,Request);
             resultData.songinfo.cover =resultData.songinfo.cover;
             resultData.songinfo.fileName = $"{PublicFunction.GetRequestHost(Request)}/Files/SondFiles/{resultData.songinfo.fileName}";
             resultData.albuminfo.albumCover = $"{host}/{PublicFunction.ConvertCover(resultData.albuminfo.albumCover)}";

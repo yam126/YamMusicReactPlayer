@@ -459,11 +459,21 @@ namespace YamMusicPlayerWebApi.Controllers
         private vwFriends ConvertApiResult(vw_friends args, HttpRequest Request)
         {
             string cover = string.Empty;
+            string userFace = string.Empty;
             string host = PublicFunction.GetRequestHost(Request);
+            string FriendUserFace = string.Empty;
             if (!string.IsNullOrEmpty(args.Cover))
             {
                 cover = PublicFunction.ConvertCover(args.Cover);
                 cover = $"{host}/{cover}";
+            }
+            if (!string.IsNullOrEmpty(args.Userface))
+            {
+                userFace = $"/{host}/{args.Userface}";
+            }
+            if (!string.IsNullOrEmpty(args.FriendUserFace))
+            {
+                FriendUserFace = $"/{host}/{args.FriendUserFace}";
             }
             var result = new vwFriends()
             {
@@ -472,11 +482,11 @@ namespace YamMusicPlayerWebApi.Controllers
                 SongId = args.SongId.ToString(),
                 FriendUserId = args.FriendUserId.ToString(),
                 Username = args.Username,
-                Userface = args.Userface,
+                Userface = userFace,
                 Cover = cover,
                 Comment = args.Comment,
                 FriendUserName = args.FriendUserName,
-                FriendUserFace = args.FriendUserFace,
+                FriendUserFace = FriendUserFace,
                 Title = args.Title,
                 Artist = args.Artist,
                 Createddatetime = args.Createddatetime.ToString("yyyy-MM-dd HH:mm:ss"),

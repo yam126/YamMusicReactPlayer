@@ -123,6 +123,7 @@ namespace YamMusicPlayerWebApi.Controllers
             }
             #endregion
 
+            string host = PublicFunction.GetRequestHost(Request);          
             result = new EntityResult<LoginResult>()
             {
                 Status = 0,
@@ -130,9 +131,10 @@ namespace YamMusicPlayerWebApi.Controllers
                 Result = new LoginResult() {
                     userId = dbUserInfo.Userid.ToString(),
                     token = token,
-                    UserFace=dbUserInfo.Userface.ToString(),
+                    UserFace=$"{host}/{dbUserInfo.Userface.ToString()}",
                 }
             };
+            Console.WriteLine(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")+JSONHelper.ObjectToJSON(result));
             return result;
         }
 

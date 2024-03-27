@@ -144,7 +144,7 @@ namespace YamMusicPlayerWebApi.Controllers
 
             #region 返回值转换
             PageData.ForEach(item => {
-                resultData.Add(ConvertApi(item));
+                resultData.Add(ConvertApi(item,Request));
             });
             #endregion
 
@@ -298,15 +298,16 @@ namespace YamMusicPlayerWebApi.Controllers
         /// </summary>
         /// <param name="args">数据库参数</param>
         /// <returns>转换后的值</returns>
-        private vwSongCommentResult ConvertApi(vw_songcomment args) 
+        private vwSongCommentResult ConvertApi(vw_songcomment args,HttpRequest Request) 
         {
+            var host = PublicFunction.GetRequestHost(Request);
             var result = new vwSongCommentResult()
             {
                 CommentId = args.CommentId.ToString(),
                 SongId = args.SongId.ToString(),
                 Publisher = args.Publisher.ToString(),
                 Username = args.Username,
-                Userface = args.Userface,
+                Userface = $"/{host}/{args.Userface}",
                 Content=args.Content,
                 Createddatetime=args.Createddatetime.ToString("yyyy-MM-dd HH:mm:ss"),
                 State=args.State.ToString(),

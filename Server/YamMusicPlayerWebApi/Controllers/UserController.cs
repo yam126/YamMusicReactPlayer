@@ -64,7 +64,7 @@ namespace YamMusicPlayerWebApi.Controllers
             }
             #endregion
 
-            resultData = PublicFunction.ConvertApi(users[0]);
+            resultData = PublicFunction.ConvertApi(users[0],Request);
             result = new EntityResult<userInfoResult>()
             {
                 Status = 0,
@@ -93,6 +93,9 @@ namespace YamMusicPlayerWebApi.Controllers
 
             //验证消息
             string checkMessage = string.Empty;
+
+            //Host地址
+            string Host = string.Empty;
 
             //用户信息
             var user = new List<userinfo>();
@@ -145,7 +148,8 @@ namespace YamMusicPlayerWebApi.Controllers
             #endregion
 
             #region 更新头像数据
-            user[0].userface = args.userFaceUrl;
+            Host = PublicFunction.GetRequestHost(Request);
+            user[0].userface = args.userFaceUrl.Replace($"{Host}/","");
             user[0].modifieddatetime = DateTime.Now;
             resultDbState = new userinfo_BLL().Update(user[0], $" userid='{args.userId}' ", out message);
             if (resultDbState != 0)
@@ -491,7 +495,7 @@ namespace YamMusicPlayerWebApi.Controllers
 
             #region 拼接返回URL
             host = PublicFunction.GetRequestHost(Request);
-            resultUrl = $"{host}/{UploadUserFacePath}/{resultFileList[0].NewFileName}";
+            resultUrl = $"/{UploadUserFacePath}/{resultFileList[0].NewFileName}";
             #endregion
 
             #region 更新头像数据
