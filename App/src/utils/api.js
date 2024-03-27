@@ -2,9 +2,6 @@
 //import request from './request';
 import axios from 'axios';
 
-//debug的api地址
-//export const host = 'http://192.168.3.82:5242/';
-
 //部署api地址
 export const host = 'http://180fad49.nat123.fun:34607/';
 
