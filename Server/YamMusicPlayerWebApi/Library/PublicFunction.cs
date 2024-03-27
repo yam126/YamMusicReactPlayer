@@ -21,14 +21,20 @@ namespace YamMusicPlayerWebApi.Library
         {
             string result = string.Empty;
             string httpProtocol = string.Empty;
-            if (Request.IsHttps)
-                httpProtocol = "https";
+            var urlConfig = AppSetting.GetAppSetting("ExternalNetworkHost");
+            if (string.IsNullOrEmpty(urlConfig))
+            {
+                if (Request.IsHttps)
+                    httpProtocol = "https";
+                else
+                    httpProtocol = "http";
+                if (Request.Host.Port != null)
+                    result = $"{httpProtocol}://{Request.Host.Host}:{Request.Host.Port}";
+                else
+                    result = $"{httpProtocol}://{Request.Host}";
+            }
             else
-                httpProtocol = "http";
-            if (Request.Host.Port != null)
-                result = $"{httpProtocol}://{Request.Host.Host}:{Request.Host.Port}";
-            else
-                result = $"{httpProtocol}://{Request.Host}";
+                result = urlConfig;
             return result;
         }
 
@@ -317,12 +323,18 @@ namespace YamMusicPlayerWebApi.Library
             return result;
         }
 
-        public static userInfoResult ConvertApi(userinfo args)
+        public static userInfoResult ConvertApi(userinfo args,HttpRequest Request)
         {
+            string userFace = string.Empty;
+            string host = PublicFunction.GetRequestHost(Request);
+            if (!string.IsNullOrEmpty(args.userface)) 
+            {
+                userFace = $"/{host}/{args.userface}";
+            }
             var result = new userInfoResult()
             {
                 userid = args.userid.GetValueOrDefault().ToString(),
-                userface = args.userface,
+                userface = userFace,
                 username = args.username,
                 email = args.email,
                 signature = args.signature,
