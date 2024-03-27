@@ -23,6 +23,7 @@
                 Appr&nbsp;description<br/>
             </div>
             <div class="Content">
+                Edit Ide Visual Studio Code<br/>
                 首次启动需要yarn add或npm install安装需要的node models<br/>
                 The first startup requires yarn add or npm install to install the required node models<br/>
                 @react-native-community/art库里面<br/>
@@ -33,5 +34,22 @@
                 //import static com.facebook.react.common.ArrayUtils.copyArray;<br/>
                 如果不注释有可能编译错误<br/>
                 If you do not comment, there may be compilation errors<br/>
+                App/src/utils/api.js<br/>
+                以下代码配置<br/>
+                The following code configures the URL address of the server<br/>
+                export const host = 'Server 的URL地址';<br/>
+                export const host = 'the URL address of the server';<br/>
+            </div>
+            <div class="title" style="width: 35%;height: 13vh;font-family: 'Microsoft YaHei UI';font-size: 5vw;font-weight: 700;color: #99cee5d1;text-align: center;margin-top: 5vh;margin-left: 32.5%;text-shadow: 3px 7px 1px #3f6a8f8a, -1px 3px 16px #e0d6d6;border: 0px solid red;float: left;" >
+                Server说明<br/>
+                Server&nbsp;description<br/>
+            </div>
+            <div class="Content">
+                项目的启动文件sln在如下目录<br/> 
+                The project startup file sln is in the following directory<br/>
+                Server/YamMusicPlayerWebApi<br/>
+                项目的配置文件，主要配置，数据库连接字符串和目录(注意目录都在wwwroot下)<br/>
+                The configuration file, main configuration, database connection string and directory of the project (note that the directory is under wwwroot)<br/
+                Server/YamMusicPlayerWebApi/appsettings.json<br/>
             </div>
 </div>
